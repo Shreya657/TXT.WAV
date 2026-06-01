@@ -1,8 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TXT.WAV - Universal Text Converter
 
-## Getting Started
+![TXT.WAV Logo](public/ss.png) <!-- Placeholder, replace with actual project logo if available -->
 
-First, run the development server:
+TXT.WAV is a modern, intuitive web application built with Next.js that provides real-time bidirectional conversion between standard English text and various digital formats, including Binary, Morse Code, ASCII, and Hexadecimal. Ideal for developers, enthusiasts, or anyone needing quick text transformations.
+
+## ✨ Features
+
+*   **Bidirectional Conversion:** Seamlessly convert text to code and code back to text.
+*   **Multiple Formats:** Supports conversion for:
+    *   **Binary:** English Text ↔ Binary
+    *   **Morse Code:** English Text ↔ Morse Code
+    *   **ASCII:** English Text ↔ ASCII Decimal Representation
+    *   **Hexadecimal:** English Text ↔ Hexadecimal Representation
+*   **Real-time Updates:** Input changes are instantly reflected in the output.
+*   **Intuitive UI:** Clean and responsive user interface powered by Tailwind CSS.
+*   **Copy to Clipboard:** Easily copy the converted output with a single click.
+*   **Swap Direction:** Quickly switch the conversion direction, with automatic transfer of the previous output to the new input.
+*   **Clear Input:** Convenient button to clear the input field.
+
+## 🚀 Technologies Used
+
+*   **Next.js** (v16.1.0) - React framework for production.
+*   **React** (v19.2.3) - Frontend JavaScript library.
+*   **TypeScript** (v5) - Statically typed superset of JavaScript.
+*   **Tailwind CSS** (v4) - A utility-first CSS framework for rapid UI development.
+*   **Heroicons** (v2.2.0) - A set of free MIT-licensed high-quality SVG icons.
+*   **Geist Fonts** - Optimized and loaded via `next/font` for a modern typography.
+
+## 📦 Installation
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+*   Node.js (LTS version recommended)
+*   npm or yarn or pnpm or bun
+
+### Steps
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/text-converter.git # Replace with actual repo URL
+    cd text-converter
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    # or
+    bun install
+    ```
+
+## 🏃 Running the Project
+
+### Development Server
+
+To run the project in development mode:
 
 ```bash
 npm run dev
@@ -14,23 +71,89 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application. The page will hot-reload as you make edits.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the application for production:
 
-## Learn More
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+# or
+bun build
+```
 
-To learn more about Next.js, take a look at the following resources:
+To start the production server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run start
+# or
+yarn start
+# or
+pnpm start
+# or
+bun start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👨‍💻 Usage
 
-## Deploy on Vercel
+The TXT.WAV interface is designed for ease of use:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  **Select Conversion Format:** Use the dropdown menu in the top-right corner to choose between Binary, Morse, ASCII, or Hex.
+2.  **Set Direction:** The default direction is "English→Code". Click the <kbd>ArrowsUpDownIcon</kbd> button in the middle to swap to "Code→English".
+3.  **Enter Input:** Type or paste your text/code into the upper textarea. The conversion happens in real-time.
+    *   Click the <kbd>XMarkIcon</kbd> button next to the input field to clear it.
+4.  **View Output:** The converted result will appear in the lower textarea.
+5.  **Copy Output:** Click the <kbd>ClipboardIcon</kbd> button below the output textarea to copy the result to your clipboard. A "Copied!" message will briefly appear.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Project Structure
+
+```
+.
+├── app/
+│   ├── favicon.ico
+│   ├── globals.css           # Global Tailwind CSS styles
+│   ├── layout.tsx            # Root layout for Next.js app (fonts, global styles)
+│   ├── page.tsx              # Main converter application page
+│   └── utils/                # Utility functions for various conversions
+│       ├── ascii.ts          # ASCII conversion logic
+│       ├── binary.ts         # Binary conversion logic
+│       ├── hex.ts            # Hexadecimal conversion logic
+│       └── morse.ts          # Morse Code conversion logic
+├── public/                   # Static assets (images, icons)
+├── .next/                    # Build output (generated by Next.js)
+├── node_modules/             # Project dependencies
+├── eslint.config.mjs         # ESLint configuration
+├── next-env.d.ts             # TypeScript declaration for Next.js environment
+├── next.config.ts            # Next.js configuration
+├── package.json              # Project metadata and dependencies
+├── postcss.config.mjs        # PostCSS configuration (for Tailwind CSS)
+├── README.md                 # Project README file
+└── tsconfig.json             # TypeScript compiler configuration
+```
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information. <!-- Create a LICENSE file in the root directory if not present -->
+
+## 🙏 Acknowledgements
+
+*   [Next.js](https://nextjs.org/)
+*   [React](https://react.dev/)
+*   [Tailwind CSS](https://tailwindcss.com/)
+*   [Heroicons](https://heroicons.com/)
+*   [Geist Fonts](https://vercel.com/font)
